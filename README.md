@@ -45,6 +45,15 @@ lib/                 # drivers JDBC (PostgreSQL e MySQL)
 
 Se o seu PostgreSQL usar outra porta ou outro usuário, ajuste `URL` e `USUARIO` em [`src/dao/Conexao.java`](src/dao/Conexao.java).
 
+## Testes automatizados
+
+A pasta `src/tests` tem um teste para cada CRUD, na ordem Cliente, Gado e Aplicação. Cada um testa listar, cadastrar,
+cadastrar com campos vazios (deve lançar exceção), alterar e excluir, direto no banco. Os testes criam os próprios dados
+e apagam tudo no final, sem mexer nos registros existentes.
+
+Para executar, rode a classe `tests.ExecutarTestes` (ela pede a senha do banco numa janela). A saída mostra
+`Passou` ou `Falhou` em cada teste e um resumo no final.
+
 ## Banco de dados
 
 Três tabelas: `cliente`, `gado` (pertence a um cliente) e `aplicacao` (pertence a um gado).
